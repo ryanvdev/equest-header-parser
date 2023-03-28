@@ -1,1 +1,4 @@
-.replit
+tsconfig.json
+.prettierrc
+
+public/
