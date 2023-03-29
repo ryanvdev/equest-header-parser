@@ -1,5 +1,6 @@
 import express from 'express';
 import path from 'path';
+import serveFavicon from 'serve-favicon';
 import { controllerRouters } from './controllers';
 import { tryToLoadEnv } from './loader';
 
@@ -23,6 +24,8 @@ const main = async () => {
             },
         }),
     );
+
+    app.use(serveFavicon(path.join(__dirname, '../public/img/favicon.ico')));
 
     // * Routers
     app.use(controllerRouters());

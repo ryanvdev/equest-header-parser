@@ -16,10 +16,10 @@ export class HomeController {
     private constructor() {}
 
     public home = async (req: Request, res: Response) => {
-        try{
+        try {
             const userAgent = new UAParser(req.headers['user-agent']);
             const ipv4 = req.ip.split(':').at(-1)!;
-    
+
             res.status(200)
                 .send(
                     React.render(
@@ -31,8 +31,7 @@ export class HomeController {
                     ),
                 )
                 .end();
-        }
-        catch(e){
+        } catch (e) {
             console.log(e);
             res.sendStatus(500);
         }
