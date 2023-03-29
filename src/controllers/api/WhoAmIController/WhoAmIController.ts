@@ -19,14 +19,20 @@ export class WhoAmIController {
     private constructor() {}
 
     public readonly whoAmIApi = async (req: Request, res: Response) => {
-        const ipAddress = req.ip.split(':').at(-1)!;
-        const language = req.headers['accept-language'];
-        const software = req.headers['user-agent'];
-
-        res.status(200).json({
-            ipaddress: ipAddress,
-            language,
-            software,
-        } as WhoAmIApiResponse);
+        try{
+            const ipAddress = req.ip.split(':').at(-1)!;
+            const language = req.headers['accept-language'];
+            const software = req.headers['user-agent'];
+    
+            res.status(200).json({
+                ipaddress: ipAddress,
+                language,
+                software,
+            } as WhoAmIApiResponse).end();
+        }
+        catch(e){
+            console.log(e);
+            res.sendStatus(500).end();
+        }
     };
 }

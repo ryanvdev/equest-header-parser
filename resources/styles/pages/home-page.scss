@@ -1,0 +1,65 @@
+.home-page {
+    width: 100%;
+    display: block;
+}
+
+.home-page > .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    padding: 10px 0px;
+
+    h2 {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+        color: blue;
+    }
+
+    > section {
+        display: block;
+        width: 100%;
+
+        border-radius: 10px;
+
+        padding: 20px;
+
+        background-color: var(--color3);
+        backdrop-filter: blur(5px);
+
+        // box-shadow: 3px 3px 5px rgba(0,0,0,0.5),
+        // 5px 5px 10px rgba(0,0,0,0.1);
+
+        > ul {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            width: 100%;
+            height: auto;
+
+            list-style-type: none;
+
+            font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+                Bitstream Vera Sans Mono, Courier New, monospace, serif;
+
+            > li {
+                display: block;
+                width: 100%;
+                height: auto;
+                > span {
+                    display: inline-block;
+                    max-width: 100%;
+                    white-space: pre-wrap;
+                }
+            }
+        }
+    }
+}
+
+#ipv4 {
+    color: blueviolet;
+}

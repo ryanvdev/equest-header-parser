@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import { controllerRouters } from './controllers';
 import { tryToLoadEnv } from './loader';
 
@@ -10,6 +11,18 @@ const main = async () => {
     console.groupEnd();
 
     const app = express();
+
+    // * Middleware
+
+    app.use(
+        '/static',
+        express.static(path.join(__dirname, '../public/'), {
+            cacheControl: true,
+            setHeaders: (res) => {
+                res.setHeader('cache-control', 'no-cache');
+            },
+        }),
+    );
 
     // * Routers
     app.use(controllerRouters());

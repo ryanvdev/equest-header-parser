@@ -21,6 +21,8 @@ export function envConfig() {
                 .max(2 ** 16)
                 .default(3000),
         ),
+        APP_NAME: z.string().default('myip.zitska.com'),
+        DOMAIN: z.string().default('myip.zitska.com'),
     });
 }
 

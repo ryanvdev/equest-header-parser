@@ -3,3 +3,46 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    --color1: #212031;
+    --color2: #2f9bb1;
+    --color3: rgba(200, 230, 255, 0.7);
+}
+
+html {
+    background-image: url('/static/img/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+html,
+body {
+    display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    width: 100vw;
+    height: auto;
+    min-height: 100vh;
+}
+
+.container {
+    display: block;
+
+    width: 1100px;
+    max-width: 100%;
+
+    margin: 0px auto;
+}
+
+a.default {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+@import './components/index.scss';
+@import './layouts/index.scss';
+@import './pages/index.scss';
