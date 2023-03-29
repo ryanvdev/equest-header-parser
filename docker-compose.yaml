@@ -1,0 +1,12 @@
+version: '2'
+services:
+  app:
+    container_name: request-header-parser
+    image: tuannguyen7326dev/request-header-parser:0.0.1
+    build: .
+    ports:
+      - 8001:3000
+    cpus: 1
+    mem_limit: 1G
+    memswap_limit: 3G
+    

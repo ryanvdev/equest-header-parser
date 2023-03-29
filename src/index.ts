@@ -3,6 +3,7 @@ import path from 'path';
 import serveFavicon from 'serve-favicon';
 import { controllerRouters } from './controllers';
 import { tryToLoadEnv } from './loader';
+import cors from 'cors';
 
 const main = async () => {
     await tryToLoadEnv(); // ! IMPORTANT
@@ -13,7 +14,11 @@ const main = async () => {
 
     const app = express();
 
+
+
     // * Middleware
+
+    app.use(cors());
 
     app.use(
         '/static',
